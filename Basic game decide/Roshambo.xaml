@@ -33,7 +33,13 @@
             <TextBlock Text="CPU"/>
         </Viewbox>
         <Viewbox Stretch="Fill">
-            <Image></Image>
+            <Image Source="/Images/Rock.png" />
+        </Viewbox>
+        <Viewbox Stretch="Fill">
+            <Image Source="/Images/Paper.png" />
+        </Viewbox>
+        <Viewbox Stretch="Fill">
+            <Image Source="/Images/Scissors.png" />
         </Viewbox>
     </Grid>
 </Window>
