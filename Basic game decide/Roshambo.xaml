@@ -32,14 +32,32 @@
         <Viewbox Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="0">
             <TextBlock Text="CPU"/>
         </Viewbox>
-        <Viewbox Stretch="Fill">
-            <Image Source="/Images/Rock.png" />
+        <Viewbox Stretch="Fill" Grid.Column="0" Grid.Row="3">
+            <Button>
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="/Images/Rock.png"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </Viewbox>
-        <Viewbox Stretch="Fill">
-            <Image Source="/Images/Paper.png" />
+        <Viewbox Stretch="Fill" Grid.Column="1" Grid.Row="3">
+            <Button>
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="/Images/Paper.png" />
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </Viewbox>
-        <Viewbox Stretch="Fill">
-            <Image Source="/Images/Scissors.png" />
+        <Viewbox Stretch="Fill" Grid.Column="2" Grid.Row="3">
+            <Button>
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="/Images/Scissors.png"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </Viewbox>
     </Grid>
 </Window>
