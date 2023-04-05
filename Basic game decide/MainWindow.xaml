@@ -1,0 +1,44 @@
+﻿<Window x:Class="Basic_game_decide.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Basic_game_decide"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Viewbox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5">
+            <TextBlock Text="Game Decide" HorizontalAlignment="Center"/>
+        </Viewbox>
+
+        <Viewbox  Grid.Column="1" Grid.Row="3" Stretch="Fill">
+            <Button Content="Rock, Paper, Scizzors" Click="Roshambo_Click"/>
+        </Viewbox>
+        <Viewbox Grid.Column="3" Grid.Row="3" Stretch="Fill">
+            <Button Content="Spinningwheel" Click="SpinningWheel_Click"/>
+        </Viewbox>
+        <Viewbox Grid.Column="1" Grid.Row="5" Stretch="Fill">
+            <Button Content="Pac-man" Click="Pacman_Click"/>
+        </Viewbox>
+        <Viewbox Grid.Column="3" Grid.Row="5" Stretch="Fill">
+            <Button Content="Blackjack" Click="BlackJack_Click"/>
+        </Viewbox>
+    </Grid>
+</Window>
