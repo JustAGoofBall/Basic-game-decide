@@ -59,5 +59,32 @@
                 </Button.Template>
             </Button>
         </Viewbox>
+        <Viewbox Stretch="Fill" Grid.Column="4" Grid.Row="3">
+            <Button>
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="/Images/Rock.png"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Viewbox>
+        <Viewbox Stretch="Fill" Grid.Column="5" Grid.Row="3">
+            <Button>
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="/Images/Paper.png" />
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Viewbox>
+        <Viewbox Stretch="Fill" Grid.Column="6" Grid.Row="3">
+            <Button>
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="/Images/Scissors.png"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Viewbox>
     </Grid>
 </Window>
