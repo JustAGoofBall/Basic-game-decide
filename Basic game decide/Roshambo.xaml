@@ -87,5 +87,6 @@
             </Button>
         </Viewbox>
         <Image x:Name="MyImage" Source="/Images/Choose.png" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+        <Image x:Name="OtherImage" Source="/Images/Choose.png" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
     </Grid>
 </Window>

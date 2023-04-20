@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace Basic_game_decide
 {
-    /// <summary>
-    /// Interaction logic for Roshambo.xaml
-    /// </summary>
     public partial class Roshambo : Window
     {
         private string[] choices = { "rock", "paper", "scissors" };
@@ -24,6 +21,7 @@ namespace Basic_game_decide
         public Roshambo()
         {
             InitializeComponent();
+            Closing += Roshambo_Closing;
         }
 
         private void play(string playerMove)
@@ -49,26 +47,33 @@ namespace Basic_game_decide
                 result = "You lost!";
             }
 
+            MyImage.Source = new BitmapImage(new Uri("/Images/" + playerMove + ".png", UriKind.Relative));
+            OtherImage.Source = new BitmapImage(new Uri("/Images/" + computerMove + ".png", UriKind.Relative));
             MessageBox.Show("You chose " + playerMove + ".\nComputer chose " + computerMove + ".\n" + result);
         }
 
         private void rock_click(object sender, RoutedEventArgs e)
         {
             play("rock");
-            Image img = MyImage;
-            img.Source = new BitmapImage(new Uri(@"C:\Data\Own project\Basic game decide\Basic game decide\Images\Paper.png"));
+            MyImage.Source = new BitmapImage(new Uri("/Images/Rock.png", UriKind.Relative));
         }
-
 
         private void paper_click(object sender, RoutedEventArgs e)
         {
             play("paper");
+            MyImage.Source = new BitmapImage(new Uri("/Images/paper.png", UriKind.Relative));
         }
 
         private void scissor_click(object sender, RoutedEventArgs e)
         {
             play("scissors");
+            MyImage.Source = new BitmapImage(new Uri("/Images/scissors.png", UriKind.Relative));
         }
 
+        private void Roshambo_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+        }
     }
 }
