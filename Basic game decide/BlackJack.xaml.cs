@@ -21,7 +21,6 @@ namespace Basic_game_decide
     {
         public BlackJack()
         {
-            InitializeComponent();
             Closing += BlackJack_Closing;
         }
 

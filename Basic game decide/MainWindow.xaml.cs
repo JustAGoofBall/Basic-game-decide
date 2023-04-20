@@ -38,18 +38,18 @@ namespace Basic_game_decide
         private void SpinningWheel_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Spinning Wheel");
-            Roshambo roshambo = new Roshambo();
+            SpinningWheel SpinningWheel = new SpinningWheel();
 
-            roshambo.Show();
+            SpinningWheel.Show();
             this.Hide();
         }
 
         private void Pacman_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("PacMan");
-            Roshambo roshambo = new Roshambo();
+            PacMan PacMan = new PacMan();
 
-            roshambo.Show();
+            PacMan.Show();
             this.Hide();
         }
 
