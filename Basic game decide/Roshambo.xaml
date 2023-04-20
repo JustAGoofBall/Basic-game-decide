@@ -88,5 +88,14 @@
         </Viewbox>
         <Image x:Name="MyImage" Source="/Images/Choose.png" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
         <Image x:Name="OtherImage" Source="/Images/Choose.png" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+        <Viewbox Stretch="Fill" Grid.Column="3" Grid.Row="3">
+            <Button Click="reset_click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <TextBlock>Reset</TextBlock>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Viewbox>
     </Grid>
 </Window>

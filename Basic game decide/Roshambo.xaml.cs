@@ -75,5 +75,11 @@ namespace Basic_game_decide
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
         }
+
+        private void reset_click(object sender, RoutedEventArgs e)
+        {
+            MyImage.Source = new BitmapImage(new Uri("/Images/Choose.png", UriKind.Relative));
+            OtherImage.Source = new BitmapImage(new Uri("/Images/Choose.png", UriKind.Relative));
+        }
     }
 }
