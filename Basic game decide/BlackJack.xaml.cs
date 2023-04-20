@@ -22,6 +22,13 @@ namespace Basic_game_decide
         public BlackJack()
         {
             InitializeComponent();
+            Closing += BlackJack_Closing;
+        }
+
+        private void BlackJack_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
         }
     }
 }

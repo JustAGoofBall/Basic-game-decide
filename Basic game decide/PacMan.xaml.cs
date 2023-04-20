@@ -22,6 +22,13 @@ namespace Basic_game_decide
         public PacMan()
         {
             InitializeComponent();
+            Closing += PacMan_Closing;
+        }
+
+        private void PacMan_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
         }
     }
 }

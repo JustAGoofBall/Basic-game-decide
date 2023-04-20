@@ -56,9 +56,9 @@ namespace Basic_game_decide
         private void BlackJack_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Black Jack");
-            Roshambo roshambo = new Roshambo();
+            BlackJack BlackJack = new BlackJack();
 
-            roshambo.Show();
+            BlackJack.Show();
             this.Hide();
         }
     }

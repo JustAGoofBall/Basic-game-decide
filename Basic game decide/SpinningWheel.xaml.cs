@@ -22,6 +22,13 @@ namespace Basic_game_decide
         public SpinningWheel()
         {
             InitializeComponent();
+            Closing += SpinningWheel_Closing;
+        }
+
+        private void SpinningWheel_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
         }
     }
 }
