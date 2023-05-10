@@ -24,6 +24,12 @@ namespace Basic_game_decide
             InitializeComponent();
         }
 
+        private void Start(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
 
+            mainWindow.Show();
+            this.Hide();
+        }
     }
 }
