@@ -24,11 +24,11 @@ namespace Basic_game_decide
         public MainWindow()
         {
             InitializeComponent();
+            Closing += MainWindow_Closing;
         }
         
         private void Roshambo_Click(object sender, RoutedEventArgs e)
         {
-            // new windows for diffrent games
             Roshambo roshambo = new Roshambo();
 
             roshambo.Show();
@@ -60,6 +60,12 @@ namespace Basic_game_decide
 
             Reflex_Clicky.Show();
             this.Hide();
+        }
+
+        private void MainWindow_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Begin_Screen begin_Screen = new Begin_Screen();
+            begin_Screen.Show();
         }
     }
 }

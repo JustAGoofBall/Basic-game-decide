@@ -22,6 +22,7 @@ namespace Basic_game_decide
         public Reflex_Clicky()
         {
             InitializeComponent();
+            Closing += Reflex_Clicky_Closing;
         }
         private void Start(object sender, RoutedEventArgs e)
         {
@@ -29,6 +30,12 @@ namespace Basic_game_decide
 
             Reflex_Clicky.Show();
             this.Hide();
+        }
+
+        private void Reflex_Clicky_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
         }
     }
 }

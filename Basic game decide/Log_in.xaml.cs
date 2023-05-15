@@ -22,13 +22,7 @@ namespace Basic_game_decide
         public Log_in()
         {
             InitializeComponent();
-        }
-
-        private void Start(object sender, RoutedEventArgs e)
-        {
-            Log_in log_in = new Log_in();
-            log_in.Show();
-            this.Hide();
+            Closing += Log_in_Closing;
         }
 
         private void Log_in_Closing(object? sender, System.ComponentModel.CancelEventArgs e)

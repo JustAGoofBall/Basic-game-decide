@@ -33,7 +33,7 @@
             <TextBlock Text="CPU"/>
         </Viewbox>
         <Viewbox Stretch="Fill" Grid.Column="0" Grid.Row="3">
-            <Button Click="rock_click">
+            <Button Click="Rock_click">
                 <Button.Template>
                     <ControlTemplate>
                         <Image Source="/Images/Rock.png"/>
@@ -42,7 +42,7 @@
             </Button>
         </Viewbox>
         <Viewbox Stretch="Fill" Grid.Column="1" Grid.Row="3">
-            <Button Click="paper_click">
+            <Button Click="Paper_click">
                 <Button.Template>
                     <ControlTemplate>
                         <Image Source="/Images/Paper.png" />
@@ -51,7 +51,7 @@
             </Button>
         </Viewbox>
         <Viewbox Stretch="Fill" Grid.Column="2" Grid.Row="3">
-            <Button Click="scissor_click">
+            <Button Click="Scissor_click">
                 <Button.Template>
                     <ControlTemplate>
                         <Image Source="/Images/Scissors.png"/>
@@ -89,7 +89,7 @@
         <Image x:Name="MyImage" Source="/Images/Choose.png" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
         <Image x:Name="OtherImage" Source="/Images/Choose.png" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
         <Viewbox Stretch="Fill" Grid.Column="3" Grid.Row="3">
-            <Button Click="reset_click">
+            <Button Click="Reset_click">
                 <Button.Template>
                     <ControlTemplate>
                         <TextBlock>Reset</TextBlock>
