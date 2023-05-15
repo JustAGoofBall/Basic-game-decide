@@ -44,21 +44,21 @@ namespace Basic_game_decide
             this.Hide();
         }
 
-        private void Pacman_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("PacMan");
-            PacMan PacMan = new PacMan();
-
-            PacMan.Show();
-            this.Hide();
-        }
-
         private void BlackJack_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Black Jack");
             BlackJack BlackJack = new BlackJack();
 
             BlackJack.Show();
+            this.Hide();
+        }
+
+        private void Reflex_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Reflex Clicky");
+            Reflex_Clicky Reflex_Clicky = new Reflex_Clicky();
+
+            Reflex_Clicky.Show();
             this.Hide();
         }
     }

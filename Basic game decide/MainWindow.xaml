@@ -35,7 +35,7 @@
             <Button Content="Spinningwheel" Click="SpinningWheel_Click"/>
         </Viewbox>
         <Viewbox Grid.Column="1" Grid.Row="5" Stretch="Fill">
-            <Button Content="Pac-man" Click="Pacman_Click"/>
+            <Button Content="Reflex Clicky" Click="Reflex_Click"/>
         </Viewbox>
         <Viewbox Grid.Column="3" Grid.Row="5" Stretch="Fill">
             <Button Content="Blackjack" Click="BlackJack_Click"/>

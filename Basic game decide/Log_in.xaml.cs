@@ -15,29 +15,26 @@ using System.Windows.Shapes;
 namespace Basic_game_decide
 {
     /// <summary>
-    /// Interaction logic for Begin_Screen.xaml
+    /// Interaction logic for Log_in.xaml
     /// </summary>
-    public partial class Begin_Screen : Window
+    public partial class Log_in : Window
     {
-        public Begin_Screen()
+        public Log_in()
         {
             InitializeComponent();
         }
 
         private void Start(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-
-            mainWindow.Show();
+            Log_in log_in = new Log_in();
+            log_in.Show();
             this.Hide();
         }
 
-        private void Log_in_Click(object sender, RoutedEventArgs e)
+        private void Log_in_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
         {
-            Log_in log_in = new Log_in();
-
-            log_in.Show();
-            this.Hide();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
         }
     }
 }

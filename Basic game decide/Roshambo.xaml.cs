@@ -24,7 +24,7 @@ namespace Basic_game_decide
             Closing += Roshambo_Closing;
         }
 
-        private void play(string playerMove)
+        private void Play(string playerMove)
         {
             Random random = new Random();
             int computerChoice = random.Next(0, 3);
@@ -52,21 +52,21 @@ namespace Basic_game_decide
             MessageBox.Show("You chose " + playerMove + ".\nComputer chose " + computerMove + ".\n" + result);
         }
 
-        private void rock_click(object sender, RoutedEventArgs e)
+        private void Rock_click(object sender, RoutedEventArgs e)
         {
-            play("rock");
+            Play("rock");
             MyImage.Source = new BitmapImage(new Uri("/Images/Rock.png", UriKind.Relative));
         }
 
-        private void paper_click(object sender, RoutedEventArgs e)
+        private void Paper_click(object sender, RoutedEventArgs e)
         {
-            play("paper");
+            Play("paper");
             MyImage.Source = new BitmapImage(new Uri("/Images/paper.png", UriKind.Relative));
         }
 
-        private void scissor_click(object sender, RoutedEventArgs e)
+        private void Scissor_click(object sender, RoutedEventArgs e)
         {
-            play("scissors");
+            Play("scissors");
             MyImage.Source = new BitmapImage(new Uri("/Images/scissors.png", UriKind.Relative));
         }
 
@@ -76,7 +76,7 @@ namespace Basic_game_decide
             mainWindow.Show();
         }
 
-        private void reset_click(object sender, RoutedEventArgs e)
+        private void Reset_click(object sender, RoutedEventArgs e)
         {
             MyImage.Source = new BitmapImage(new Uri("/Images/Choose.png", UriKind.Relative));
             OtherImage.Source = new BitmapImage(new Uri("/Images/Choose.png", UriKind.Relative));

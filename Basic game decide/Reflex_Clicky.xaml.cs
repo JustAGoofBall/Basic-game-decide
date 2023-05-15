@@ -15,20 +15,20 @@ using System.Windows.Shapes;
 namespace Basic_game_decide
 {
     /// <summary>
-    /// Interaction logic for PacMan.xaml
+    /// Interaction logic for Reflex_Clicky.xaml
     /// </summary>
-    public partial class PacMan : Window
+    public partial class Reflex_Clicky : Window
     {
-        public PacMan()
+        public Reflex_Clicky()
         {
             InitializeComponent();
-            Closing += PacMan_Closing;
         }
-
-        private void PacMan_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
+        private void Start(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            Reflex_Clicky Reflex_Clicky = new Reflex_Clicky();
+
+            Reflex_Clicky.Show();
+            this.Hide();
         }
     }
 }
