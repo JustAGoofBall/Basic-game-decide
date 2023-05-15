@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.33" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Images\Choose.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

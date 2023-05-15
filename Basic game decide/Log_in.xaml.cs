@@ -25,10 +25,19 @@ namespace Basic_game_decide
             Closing += Log_in_Closing;
         }
 
+        // Close window
         private void Log_in_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
+        }
+
+        private void Register_Click(object sender, RoutedEventArgs e)
+        {
+            Register_Account roshambo = new Register_Account();
+
+            roshambo.Show();
+            this.Hide();
         }
     }
 }
