@@ -23,13 +23,13 @@ namespace Basic_game_decide
     /// </summary>
     public partial class Register_Account : Window
     {
-        private DatabaseHandler _dbHandler;
+        private DatabaseHandler _connection;
 
         public Register_Account()
         {
             InitializeComponent();
             Closing += Register_Closing;
-            _dbHandler = new DatabaseHandler();
+            _connection = new DatabaseHandler();
         }
 
         private void Register_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
@@ -45,8 +45,8 @@ namespace Basic_game_decide
 
             try
             {
-                _dbHandler.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO users (name, password) VALUES (@name, @password)");
+                _connection.Open();
+                MySqlCommand command = new MySqlCommand("INSERT INTO users (name, password) VALUES (@name, @password)", _connection.Connection);
 
                 command.Parameters.AddWithValue("@name", name);
                 command.Parameters.AddWithValue("@password", password);
@@ -68,7 +68,7 @@ namespace Basic_game_decide
             }
             finally
             {
-                _dbHandler.Close();
+                _connection.Close();
             }
         }
 

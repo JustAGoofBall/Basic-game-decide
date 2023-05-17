@@ -1,18 +1,27 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
 
 namespace Basic_game_decide.Classes
 {
-    internal class DatabaseHandler
+    public class DatabaseHandler
     {
         private MySqlConnection _connection;
+        private string _server;
+        private string _database;
+        private string _uid;
+        private string _password;
+
+        public MySqlConnection Connection
+        {
+            get { return _connection; }
+        }
 
         public DatabaseHandler()
         {
-            // Set the connection string
-            string connectionString = "server=localhost;database=basicgame;uid=root;pwd=;";
-
-            // Create a new MySqlConnection object
+            _server = "localhost:3308";
+            _database = "basicgame";
+            _uid = "root@localhost";
+            _password = "Ninjaturtle7";
+            string connectionString = $"SERVER={_server};DATABASE={_database};UID={_uid};PASSWORD={_password};";
             _connection = new MySqlConnection(connectionString);
         }
 
