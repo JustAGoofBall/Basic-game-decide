@@ -40,13 +40,13 @@ namespace Basic_game_decide
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            string name = nameTextBox.Text; 
-            string password = passwordTextBox.Text; 
+            string name = nameTextBox.Text;
+            string password = passwordTextBox.Text;
 
             try
             {
                 _connection.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO users (name, password) VALUES (@name, @password)", _connection.Connection);
+                MySqlCommand command = new MySqlCommand("INSERT INTO playertabel (naam, wachtwoord) VALUES (@name, @password)", _connection.Connection);
 
                 command.Parameters.AddWithValue("@name", name);
                 command.Parameters.AddWithValue("@password", password);
@@ -64,7 +64,7 @@ namespace Basic_game_decide
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Failed to connect to database: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Failed to connect to the database: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             finally
             {

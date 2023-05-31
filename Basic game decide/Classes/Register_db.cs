@@ -17,11 +17,11 @@ namespace Basic_game_decide.Classes
 
         public DatabaseHandler()
         {
-            _server = "localhost:3308";
+            _server = "localhost";
             _database = "basicgame";
-            _uid = "root@localhost";
-            _password = "Ninjaturtle7";
-            string connectionString = $"SERVER={_server};DATABASE={_database};UID={_uid};PASSWORD={_password};";
+            _uid = "root";
+            _password = "";
+            string connectionString = $"SERVER={_server};PORT=3308;DATABASE={_database};UID={_uid};PASSWORD={_password};";
             _connection = new MySqlConnection(connectionString);
         }
 
