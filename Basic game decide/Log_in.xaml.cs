@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
+using Basic_game_decide.Classes;
 
 namespace Basic_game_decide
 {
@@ -19,13 +21,16 @@ namespace Basic_game_decide
     /// </summary>
     public partial class Log_in : Window
     {
+        public static string LoggedInUsername { get; private set; }
+        private DatabaseHandler _connection;
+
         public Log_in()
         {
             InitializeComponent();
             Closing += Log_in_Closing;
+            _connection = new DatabaseHandler();
         }
 
-        // Close window
         private void Log_in_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
@@ -34,10 +39,43 @@ namespace Basic_game_decide
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
-            Register_Account roshambo = new Register_Account();
-
-            roshambo.Show();
+            Register_Account registerPage = new Register_Account();
+            registerPage.Show();
             this.Hide();
+        }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+            string name = Username.Text;
+            string password = Password.Text;
+
+            try
+            {
+                _connection.Open();
+                MySqlCommand command = new MySqlCommand("SELECT COUNT(*) FROM playertabel WHERE naam = @name AND wachtwoord = @password", _connection.Connection);
+
+                command.Parameters.AddWithValue("@name", name);
+                command.Parameters.AddWithValue("@password", password);
+
+                int result = Convert.ToInt32(command.ExecuteScalar());
+
+                if (result > 0)
+                {
+                    MessageBox.Show("Login successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to connect to the database: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
+                _connection.Close();
+            }
         }
     }
 }

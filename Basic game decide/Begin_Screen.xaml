@@ -29,7 +29,7 @@
             <Button Content="Start" Click="Start"/>
         </Viewbox>
         <Viewbox Grid.Column="3" Grid.Row="3" Stretch="Fill">
-            <Label Content="User"/>
+            <Label x:Name="usernameLabel" Content="Username"/>
         </Viewbox>
         <Viewbox Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="1" Stretch="Fill">
             <Label Content="Welcome"/>
