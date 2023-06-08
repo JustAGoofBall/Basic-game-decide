@@ -62,9 +62,9 @@ namespace Basic_game_decide
         private void Fast_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Reflex Clicky");
-            Fast_Clicky Reflex_Clicky = new Fast_Clicky();
+            Fast_Clicky Fast_Clicky = new Fast_Clicky();
 
-            Reflex_Clicky.Show();
+            Fast_Clicky.Show();
             this.Hide();
         }
     }
