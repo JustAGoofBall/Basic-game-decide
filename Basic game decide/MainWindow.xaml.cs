@@ -61,8 +61,8 @@ namespace Basic_game_decide
 
         private void Fast_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Reflex Clicky");
-            Fast_Clicky Fast_Clicky = new Fast_Clicky();
+            MessageBox.Show("Fast Clicky");
+            Fast_Clicky Fast_Clicky = new Fast_Clicky(this);
 
             Fast_Clicky.Show();
             this.Hide();

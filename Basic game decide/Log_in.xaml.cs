@@ -21,7 +21,7 @@ namespace Basic_game_decide
     /// </summary>
     public partial class Log_in : Window
     {
-        public static string LoggedInUsername { get; private set; }
+        public string? LoggedInUsername { get; private set; }
         private DatabaseHandler _connection;
 
         public Log_in()
@@ -61,7 +61,13 @@ namespace Basic_game_decide
 
                 if (result > 0)
                 {
+                    LoggedInUsername = name; // Set the LoggedInUsername property
                     MessageBox.Show("Login successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    MainWindow mainWindow = new MainWindow();
+                    Fast_Clicky fastClicky = new Fast_Clicky(mainWindow);
+                    fastClicky.Show();
+                    this.Hide();
                 }
                 else
                 {
@@ -77,5 +83,6 @@ namespace Basic_game_decide
                 _connection.Close();
             }
         }
+
     }
 }
