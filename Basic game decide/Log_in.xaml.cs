@@ -62,6 +62,7 @@ namespace Basic_game_decide
                 if (result > 0)
                 {
                     LoggedInUsername = name; // Set the LoggedInUsername property
+
                     MessageBox.Show("Login successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
 
                     MainWindow mainWindow = new MainWindow();
@@ -83,6 +84,5 @@ namespace Basic_game_decide
                 _connection.Close();
             }
         }
-
     }
 }
