@@ -15,24 +15,15 @@ using System.Windows.Shapes;
 namespace Basic_game_decide
 {
     /// <summary>
-    /// Interaction logic for Reflex_Clicky.xaml
+    /// Interaction logic for Fast_Clicky.xaml
     /// </summary>
-    public partial class Reflex_Clicky : Window
+    public partial class Fast_Clicky : Window
     {
-        public Reflex_Clicky()
+        public Fast_Clicky()
         {
-            InitializeComponent();
-            Closing += Reflex_Clicky_Closing;
+            Closing += Fast_Clicky_Closing;
         }
-        private void Start(object sender, RoutedEventArgs e)
-        {
-            Reflex_Clicky Reflex_Clicky = new Reflex_Clicky();
-
-            Reflex_Clicky.Show();
-            this.Hide();
-        }
-
-        private void Reflex_Clicky_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
+        private void Fast_Clicky_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();

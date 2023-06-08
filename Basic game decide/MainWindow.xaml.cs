@@ -53,19 +53,19 @@ namespace Basic_game_decide
             this.Hide();
         }
 
-        private void Reflex_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Reflex Clicky");
-            Reflex_Clicky Reflex_Clicky = new Reflex_Clicky();
-
-            Reflex_Clicky.Show();
-            this.Hide();
-        }
-
         private void MainWindow_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
         {
             Begin_Screen begin_Screen = new Begin_Screen();
             begin_Screen.Show();
+        }
+
+        private void Fast_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Reflex Clicky");
+            Fast_Clicky Reflex_Clicky = new Fast_Clicky();
+
+            Reflex_Clicky.Show();
+            this.Hide();
         }
     }
 }
