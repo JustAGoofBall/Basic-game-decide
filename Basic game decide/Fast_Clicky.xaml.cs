@@ -55,24 +55,24 @@ namespace Basic_game_decide
             scoreLabel.Content = $"Score: {score}";
         }
 
-        public void SaveScoreToDatabase()
+        private void SaveScoreToDatabase()
         {
             string username = Uname.Text;
 
             int currentScore = _connection.GetScore(username);
-            int highScore = _connection.GetHighScore(username);
 
-            if (score > highScore)
+            if (currentScore == 0)
             {
-                _connection.UpdateScore(username, score);
-                MessageBox.Show("New highscore recorded!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                _connection.InsertScore(username, score);
+                MessageBox.Show("New score added successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
-                MessageBox.Show("You did not beat your previous highscore.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                int updatedScore = currentScore + score;
+                _connection.UpdateScore(username, updatedScore);
+                MessageBox.Show("Score updated successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
-
 
         private void clickButton_Click(object sender, RoutedEventArgs e)
         {
