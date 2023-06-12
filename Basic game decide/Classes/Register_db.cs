@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
 
 namespace Basic_game_decide.Classes
 {
@@ -40,5 +41,85 @@ namespace Basic_game_decide.Classes
                 _connection.Close();
             }
         }
+
+        public bool CheckUsernameExists(string username)
+        {
+            try
+            {
+                Open();
+
+                MySqlCommand command = new MySqlCommand("SELECT COUNT(*) FROM playertabel WHERE naam = @username", _connection);
+                command.Parameters.AddWithValue("@username", username);
+
+                int result = Convert.ToInt32(command.ExecuteScalar());
+                return result > 0;
+            }
+            finally
+            {
+                Close();
+            }
+        }
+
+        public int GetScore(string username)
+        {
+            try
+            {
+                Open();
+
+                MySqlCommand command = new MySqlCommand("SELECT s.score FROM playertabel p INNER JOIN scores s ON p.id = s.id WHERE p.naam = @username", _connection);
+                command.Parameters.AddWithValue("@username", username);
+
+                object result = command.ExecuteScalar();
+                if (result != null)
+                {
+                    return Convert.ToInt32(result);
+                }
+
+                return 0;
+            }
+            finally
+            {
+                Close();
+            }
+        }
+
+        public void UpdateScore(string username, int score)
+        {
+            try
+            {
+                Open();
+
+                MySqlCommand command = new MySqlCommand("UPDATE scores s INNER JOIN playertabel p ON p.id = s.id SET s.score = @score WHERE p.naam = @username", _connection);
+                command.Parameters.AddWithValue("@score", score);
+                command.Parameters.AddWithValue("@username", username);
+
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                Close();
+            }
+        }
+
+        public void InsertScore(string username, int score)
+        {
+            try
+            {
+                Open();
+
+                MySqlCommand command = new MySqlCommand("INSERT INTO playertabel (naam, score) VALUES (@username, @score)", _connection);
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@score", score);
+
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                Close();
+            }
+        }
+
+
+
     }
 }

@@ -20,6 +20,7 @@ namespace Basic_game_decide
             Closing += Fast_Clicky_Closing;
             this.mainWindow = mainWindow;
             _connection = new DatabaseHandler();
+            timer = null;
             InitializeGame();
         }
 
@@ -27,14 +28,10 @@ namespace Basic_game_decide
         {
             score = 0;
             timeRemaining = 10;
-
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += Timer_Tick;
-
             UpdateUI();
-
-            timer.Start();
         }
 
         private void Timer_Tick(object? sender, EventArgs e)
@@ -58,19 +55,36 @@ namespace Basic_game_decide
             scoreLabel.Content = $"Score: {score}";
         }
 
-        private void SaveScoreToDatabase()
+        public void SaveScoreToDatabase()
         {
-            // TODO: Implement your database saving logic here
-            // You can use ADO.NET, Entity Framework, or any other ORM
-            // to connect to your database and save the score
-            // Retrieve the player's ID, for example, from a login process
-            // and then insert the score into the "scores" table.
+            string username = Uname.Text;
+
+            int currentScore = _connection.GetScore(username);
+            int highScore = _connection.GetHighScore(username);
+
+            if (score > highScore)
+            {
+                _connection.UpdateScore(username, score);
+                MessageBox.Show("New highscore recorded!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("You did not beat your previous highscore.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
+
 
         private void clickButton_Click(object sender, RoutedEventArgs e)
         {
-            score++;
-            UpdateUI();
+            if (timer?.IsEnabled == true)
+            {
+                score++;
+                UpdateUI();
+            }
+            else
+            {
+                timer?.Start();
+            }
         }
 
         private void Fast_Clicky_Closing(object? sender, CancelEventArgs e)
