@@ -16,7 +16,7 @@
         <Viewbox HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="100">
             <Label x:Name="scoreLabel" Content="Score: 0"/>
         </Viewbox>
-        <Viewbox HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="100">
+        <Viewbox HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="100" Width="300">
             <TextBox x:Name="Uname" Text="User"/>
         </Viewbox>
     </Grid>

@@ -65,8 +65,7 @@ namespace Basic_game_decide
                     MessageBox.Show("Login successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
 
                     MainWindow mainWindow = new MainWindow();
-                    Fast_Clicky fastClicky = new Fast_Clicky(mainWindow);
-                    fastClicky.Show();
+                    mainWindow.Show();
                     this.Hide();
                 }
                 else

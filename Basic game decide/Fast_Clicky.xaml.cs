@@ -61,18 +61,25 @@ namespace Basic_game_decide
 
             int currentScore = _connection.GetScore(username);
 
-            if (currentScore == 0)
+            if (score > currentScore)
             {
-                _connection.InsertScore(username, score);
-                MessageBox.Show("New score added successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                if (currentScore > 0)
+                {
+                    _connection.UpdateScore(username, score);
+                    MessageBox.Show("New high score recorded!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    _connection.InsertScore(username, score);
+                    MessageBox.Show("New score added successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
             else
             {
-                int updatedScore = currentScore + score;
-                _connection.UpdateScore(username, updatedScore);
-                MessageBox.Show("Score updated successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Try to beat your old score!", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+
 
         private void clickButton_Click(object sender, RoutedEventArgs e)
         {

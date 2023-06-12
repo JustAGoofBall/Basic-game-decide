@@ -107,9 +107,9 @@ namespace Basic_game_decide.Classes
             {
                 Open();
 
-                MySqlCommand command = new MySqlCommand("INSERT INTO playertabel (naam, score) VALUES (@username, @score)", _connection);
-                command.Parameters.AddWithValue("@username", username);
+                MySqlCommand command = new MySqlCommand("INSERT INTO scores (score, id) VALUES (@score, (SELECT id FROM playertabel WHERE naam = @username))", _connection);
                 command.Parameters.AddWithValue("@score", score);
+                command.Parameters.AddWithValue("@username", username);
 
                 command.ExecuteNonQuery();
             }
@@ -119,6 +119,24 @@ namespace Basic_game_decide.Classes
             }
         }
 
+        public bool DeleteAccount(string username, string password)
+        {
+            try
+            {
+                Open();
+
+                MySqlCommand command = new MySqlCommand("DELETE FROM playertabel WHERE naam = @username AND wachtwoord = @password", _connection);
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", password);
+
+                int rowsAffected = command.ExecuteNonQuery();
+                return rowsAffected > 0;
+            }
+            finally
+            {
+                Close();
+            }
+        }
 
 
     }

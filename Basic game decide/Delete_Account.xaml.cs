@@ -27,5 +27,29 @@ namespace Basic_game_decide
             InitializeComponent();
             _connection = new DatabaseHandler();
         }
+
+        private void DeleteAccountButton_Click(object sender, RoutedEventArgs e)
+        {
+            string username = UsernameTextBox.Text;
+            string password = PasswordTextBox.Text;
+
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this account?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                bool success = _connection.DeleteAccount(username, password);
+
+                if (success)
+                {
+                    MessageBox.Show("Account deleted successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to delete account. Please check your username and password.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+
     }
 }
