@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Basic_game_decide.Classes;
+using System;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Threading;
@@ -11,12 +12,14 @@ namespace Basic_game_decide
         private int timeRemaining;
         private DispatcherTimer? timer;
         private MainWindow mainWindow;
+        private DatabaseHandler _connection;
 
         public Fast_Clicky(MainWindow mainWindow)
         {
             InitializeComponent();
             Closing += Fast_Clicky_Closing;
             this.mainWindow = mainWindow;
+            _connection = new DatabaseHandler();
             InitializeGame();
         }
 

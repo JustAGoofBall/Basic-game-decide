@@ -23,7 +23,6 @@ namespace Basic_game_decide
     {
         public string? LoggedInUsername { get; private set; }
         private DatabaseHandler _connection;
-
         public Log_in()
         {
             InitializeComponent();
