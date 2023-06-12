@@ -16,9 +16,7 @@ namespace Basic_game_decide
         {
             InitializeComponent();
             Closing += Fast_Clicky_Closing;
-
             this.mainWindow = mainWindow;
-
             InitializeGame();
         }
 

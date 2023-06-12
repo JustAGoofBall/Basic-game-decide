@@ -61,7 +61,7 @@ namespace Basic_game_decide
 
                 if (result > 0)
                 {
-                    LoggedInUsername = name; // Set the LoggedInUsername property
+                    LoggedInUsername = name;
 
                     MessageBox.Show("Login successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
 
