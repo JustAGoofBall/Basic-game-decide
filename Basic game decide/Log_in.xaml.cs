@@ -84,5 +84,12 @@ namespace Basic_game_decide
                 _connection.Close();
             }
         }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            Delete_Account delete_page = new Delete_Account();
+            delete_page.Show();
+            this.Hide();
+        }
     }
 }

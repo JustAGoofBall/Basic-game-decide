@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Basic_game_decide"
         mc:Ignorable="d"
         Title="Fast_Clicky" Height="450" Width="800">
-    <Grid>
+    <Grid Background="AliceBlue">
         <Viewbox Height="150" Width="300">
             <Button x:Name="clickButton" Content="Click Me!" HorizontalAlignment="Center" VerticalAlignment="Center" Click="clickButton_Click"/>
         </Viewbox>
